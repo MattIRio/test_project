@@ -38,8 +38,8 @@ Built with **Spring Boot 3** + **MongoDB**.
   "title": "Weekly plan",
   "text": "Weekly plan text",
   "tags": ["IMPORTANT", "PERSONAL"]
-}```
-
+}
+```
 Quick Start (Docker)
 
 # 1. Clone the repository
