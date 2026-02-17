@@ -33,12 +33,13 @@ Built with **Spring Boot 3** + **MongoDB**.
 **Example DTOs:**
 
 
-// NoteCreateDto / NoteUpdateDto
+```json
 {
   "title": "Weekly plan",
   "text": "Weekly plan text",
   "tags": ["IMPORTANT", "PERSONAL"]
 }
+```
 
 Quick Start (Docker)
 
