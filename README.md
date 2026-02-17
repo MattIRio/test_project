@@ -32,14 +32,14 @@ Built with **Spring Boot 3** + **MongoDB**.
 
 **Example DTOs:**
 
-```json
+
 // NoteCreateDto / NoteUpdateDto
 {
   "title": "Weekly plan",
   "text": "Weekly plan text",
   "tags": ["IMPORTANT", "PERSONAL"]
 }
-```
+
 Quick Start (Docker)
 
 # 1. Clone the repository
