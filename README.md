@@ -10,7 +10,6 @@ Built with **Spring Boot 3** + **MongoDB**.
 - Pagination & sorting (default: createdDate DESC)  
 - Get word frequency statistics for any note (endpoint `/api/notes/{id}/word-stats`)  
 - Input validation & global exception handling  
-- Supported tags: `BUSINESS`, `PERSONAL`, `IMPORTANT`
 
 ## Tech Stack
 
@@ -18,7 +17,6 @@ Built with **Spring Boot 3** + **MongoDB**.
 - Spring Boot 3  
 - Spring Data MongoDB  
 - Lombok  
-- UUID as entity identifier  
 - Docker + Docker Compose (recommended way to run)
 
 ## API Endpoints
@@ -38,6 +36,6 @@ Built with **Spring Boot 3** + **MongoDB**.
 // NoteCreateDto / NoteUpdateDto
 {
   "title": "Weekly plan",
-  "text": "Buy milk, go to gym, finish README",
+  "text": "Weekly plan text",
   "tags": ["IMPORTANT", "PERSONAL"]
 }
