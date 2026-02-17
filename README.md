@@ -48,4 +48,4 @@ Quick Start (Docker)
 - cd test_project
 
 # 2. Start the application + MongoDB
-docker compose up --build
+- docker compose up --build
