@@ -39,3 +39,12 @@ Built with **Spring Boot 3** + **MongoDB**.
   "text": "Weekly plan text",
   "tags": ["IMPORTANT", "PERSONAL"]
 }
+
+Quick Start (Docker)
+
+# 1. Clone the repository
+git clone <https://github.com/MattIRio/test_project>
+cd test_project
+
+# 2. Start the application + MongoDB
+docker compose up --build
