@@ -1,0 +1,43 @@
+# Test Project – Notes API
+
+Simple REST API for managing notes with tags, pagination, basic validation, and word frequency statistics.  
+Built with **Spring Boot 3** + **MongoDB**.
+
+## Features
+
+- Create, read, update, and delete notes  
+- Filter notes by one or more tags  
+- Pagination & sorting (default: createdDate DESC)  
+- Get word frequency statistics for any note (endpoint `/api/notes/{id}/word-stats`)  
+- Input validation & global exception handling  
+- Supported tags: `BUSINESS`, `PERSONAL`, `IMPORTANT`
+
+## Tech Stack
+
+- Java 17 / 21  
+- Spring Boot 3  
+- Spring Data MongoDB  
+- Lombok  
+- UUID as entity identifier  
+- Docker + Docker Compose (recommended way to run)
+
+## API Endpoints
+
+| Method | Endpoint                            | Description                                    | Request Body          |
+|--------|-------------------------------------|------------------------------------------------|-----------------------|
+| POST   | `/api/notes`                        | Create a new note                              | NoteCreateDto         |
+| GET    | `/api/notes`                        | List notes (optional tag filter + pagination)  | — (query params)      |
+| GET    | `/api/notes/{id}`                   | Get single note by ID                          | —                     |
+| PUT    | `/api/notes/{id}`                   | Update note (partial update supported)         | NoteUpdateDto         |
+| DELETE | `/api/notes/{id}`                   | Delete note                                    | —                     |
+| GET    | `/api/notes/{id}/word-stats`        | Get word frequency statistics for the note     | —                     |
+
+**Example DTOs:**
+
+```json
+// NoteCreateDto / NoteUpdateDto
+{
+  "title": "Weekly plan",
+  "text": "Buy milk, go to gym, finish README",
+  "tags": ["IMPORTANT", "PERSONAL"]
+}
