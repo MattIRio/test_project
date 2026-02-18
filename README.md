@@ -49,3 +49,36 @@ Quick Start (Docker)
 
 # 2. Start the application + MongoDB
 - docker compose up --build
+
+
+## Test Coverage
+
+Automated tests have been implemented using **Spring Boot Test** and **MockMvc** to verify all functional requirements:
+
+### A. Creating Notes
+- Test creating a note with valid title, text, and tags  
+- Test creating a note without a title → returns **400 Bad Request**  
+- Test creating a note without text → returns **400 Bad Request**  
+- Test creating a note with invalid tag → returns **400 Bad Request** (handled by global exception handler)  
+
+### B. Updating Notes
+- Test updating an existing note's title, text, and tags successfully  
+- Test updating a non-existent note → returns **404 Not Found**  
+
+### C. Listing Notes
+- Test listing all notes  
+- Test listing notes filtered by tags  
+- Test pagination and sorting (newest notes first)  
+
+### D. Getting Note by ID
+- Test retrieving a note by its ID successfully  
+- Test retrieving a non-existent note → returns **404 Not Found**  
+
+### E. Deleting Notes
+- Test deleting an existing note successfully  
+- Test deleting a non-existent note → returns **404 Not Found**  
+
+### F. Word Statistics
+- Test calculating word frequency for a note  
+- Test calculating word frequency for empty text → returns empty map  
+
