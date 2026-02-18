@@ -1,16 +1,15 @@
 package com.matthew.test_project.exception;
 
-
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
-import tools.jackson.databind.exc.InvalidFormatException;
-import tools.jackson.databind.exc.MismatchedInputException;
 
 import java.time.Instant;
 import java.util.HashMap;
@@ -33,6 +32,22 @@ public class GlobalExceptionHandler {
                 request.getDescription(false)
         );
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<String> handleHttpMessageNotReadable(HttpMessageNotReadableException ex) {
+        Throwable cause = ex.getCause();
+        if (cause instanceof InvalidFormatException ife && ife.getTargetType().isEnum()) {
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("Invalid tag value: " + ife.getValue());
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid request body");
+    }
+
+    @ExceptionHandler(org.springframework.web.method.annotation.MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<String> handleEnumMismatch(Exception ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid tag value provided");
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

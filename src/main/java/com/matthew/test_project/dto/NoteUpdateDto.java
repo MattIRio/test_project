@@ -1,8 +1,6 @@
 package com.matthew.test_project.dto;
 
 import com.matthew.test_project.model.NoteTag;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,5 +17,6 @@ public class NoteUpdateDto {
 
     private String title;
     private String text;
+
     private Set<NoteTag> tags;
 }

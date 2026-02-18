@@ -1,7 +1,6 @@
 package com.matthew.test_project.service;
 
 import com.matthew.test_project.dto.NoteDetailDto;
-import com.matthew.test_project.dto.NoteListDto;
 import com.matthew.test_project.model.Note;
 import org.springframework.stereotype.Service;
 

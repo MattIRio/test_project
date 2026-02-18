@@ -7,8 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.HTML;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 

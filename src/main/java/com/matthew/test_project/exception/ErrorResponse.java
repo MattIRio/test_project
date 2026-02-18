@@ -1,10 +1,8 @@
 package com.matthew.test_project.exception;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 
 import java.time.Instant;
-import java.util.List;
 import java.util.Map;
 
 @Builder

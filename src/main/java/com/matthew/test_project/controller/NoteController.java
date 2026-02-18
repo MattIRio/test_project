@@ -4,24 +4,18 @@ import com.matthew.test_project.dto.NoteCreateDto;
 import com.matthew.test_project.dto.NoteDetailDto;
 import com.matthew.test_project.dto.NoteListDto;
 import com.matthew.test_project.dto.NoteUpdateDto;
-import com.matthew.test_project.exception.NoteNotFoundException;
-import com.matthew.test_project.model.Note;
 import com.matthew.test_project.model.NoteTag;
 import com.matthew.test_project.repository.NoteRepository;
 import com.matthew.test_project.service.NoteService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.support.BindingAwareConcurrentModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/notes")
@@ -73,5 +67,7 @@ public class NoteController {
     public ResponseEntity<Map<String, Long>> getWordStatistics(@PathVariable UUID id) {
         return ResponseEntity.ok(noteService.getWordFrequency(id));
     }
+
+
 
 }
