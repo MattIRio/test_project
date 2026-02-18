@@ -44,7 +44,7 @@ Built with **Spring Boot 3** + **MongoDB**.
 Quick Start (Docker)
 
 # 1. Clone the repository
-- git clone <https://github.com/MattIRio/test_project
+- git clone <https://github.com/MattIRio/test_project>
 - cd test_project
 
 # 2. Start the application + MongoDB
